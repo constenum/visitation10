@@ -1,24 +1,28 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@section('content')
-    <div class="container">
-        <div class="main-links row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <a class="btn btn-lg btn-block btn-primary" href="{{ url('/student') }}" role="button">Visitation</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Open House</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Shadow</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 1</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 2</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 3</a>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 4</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 5</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 6</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 7</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 8</a>
-                <a class="btn btn-lg btn-block btn-primary" href="#" role="button">Camp 9</a>
-            </div>
-        </div>
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+
+    @vite('resources/css/app.css')
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+<div class="font-sans text-gray-900 antialiased">
+    <header class="mt-16 text-6xl text-center text-blue-600">Welcome to St. Urusla Academy</header>
+
+    <div class="mt-16 ml-96 mr-96 text-center">
+        <a href="{{ route('student.index') }}" type="button" class="mt-4 rounded-md bg-blue-600 px-12 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Check In</a>
+
     </div>
-@endsection
+
+    <footer class="mt-16 mb-6 text-center text-sm text-gray-400 fixed inset-x-0 bottom-0">&copy; 2023 St. Ursula Academy</footer>
+</div>
+</body>
+</html>
