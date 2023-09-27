@@ -19,7 +19,7 @@ class StudentController extends Controller
     public function create()
     {
         # get all schools
-        $schools = School::all();
+        $schools = School::query()->where('is_active', true)->orderBy('short_name')->get(['id', 'name']);
         return view('student/create', compact('schools'));
     }
 
